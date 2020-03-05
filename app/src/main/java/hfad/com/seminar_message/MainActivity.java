@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickToSendSMS(View view) {
         status = 0;
         String phoneNo = edtPhoneNumber.getText().toString();
-        String content = edtPhoneNumber.getText().toString();
+        String content = edtMessage.getText().toString();
         SmsManager smsManager = SmsManager.getDefault();
         smsManager.sendTextMessage(phoneNo, null, content, null, null);
     }
