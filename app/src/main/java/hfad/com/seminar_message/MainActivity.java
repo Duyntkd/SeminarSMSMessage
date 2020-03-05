@@ -108,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickToSendSMSIntent(View view) {
         status = 0;
         Uri uri = Uri.parse("smsto:" + edtPhoneNumber.getText().toString());
-        Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(uri);
         intent.putExtra("sms_body", edtMessage.getText().toString());
         startActivity(intent);
 //        Intent intent = new Intent(Intent.ACTION_VIEW);
